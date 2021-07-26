@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 class Switchable(ABC):
-    @abstractmethod
     
+    @abstractmethod
     def turn_on(self):
         pass
 
