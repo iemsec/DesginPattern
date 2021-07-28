@@ -37,7 +37,7 @@ class CustomerSupport:
 
     tickets: List[SupportTicket] = []
 
-    def __init__(self, ordering_strategy) -> None:
+    def __init__(self, ordering_strategy: Callable[[List[SupportTicket]],List[SupportTicket]]) -> None:
         self.ordering_strategy = ordering_strategy
 
     def create_ticket(self, customer, issue):
@@ -61,7 +61,7 @@ class CustomerSupport:
         print(f"Issue: {ticket.issue}")
         print("===========================================")
 
-app = CustomerSupport(create_ordering_filo)
+app = CustomerSupport(create_ordering_random)
 
 app.create_ticket("Foo", "I have tons of problem")
 app.create_ticket("Bar", "Windows never work")
